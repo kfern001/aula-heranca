@@ -40,6 +40,17 @@ public class Workspace {
             System.out.println("\nDeposit successfully done! Account data: \n\n" + ba.toString());
         }
 
+        System.out.print("\n\nDoes the client want to make an withdraw? (s/n) ");
+        resposta = sc.next().charAt(0);
+
+        if (resposta == 's') {
+            System.out.println("\n\nYour balance: $ " + ba.getAccountBalance());
+            System.out.print("How much money do you want to take? ");
+            Double amount = sc.nextDouble();
+            ba.withdraw(amount);
+            System.out.println("\n\nYour new balance: $ " + ba.getAccountBalance());
+        }
+
         sc.close();
     }
 }
